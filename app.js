@@ -4,6 +4,7 @@ const server = http.createServer((request, response) => {
   let body = [];
   request.on("data", (chunk) => {
     body.push(chunk);
+    console.log(chunk);
   });
   request.on("end", () => {
     body = Buffer.concat(body).toString();
